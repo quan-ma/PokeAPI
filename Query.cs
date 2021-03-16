@@ -1,13 +1,21 @@
 using GraphQL;
+using GraphQL.Types;
 
 namespace PokeAPI
 {
-    public class Query
+    public class Query : ObjectGraphType
     {
-        [GraphQLMetadata("pokemon")]
-        public Pokemon GetPokemon()
+        public Query()
         {
-            return new Pokemon { Id = "1", Name = "Pikachu" };
+            Field<PokemonType>
+            (
+                "pokemon",
+                resolve: context => new Pokemon
+                {
+                    Id = "1",
+                    Name = "Pikachu"
+                }
+            );
         }
     }
 }

@@ -10,18 +10,11 @@ namespace PokeAPI
     {
   public static async Task Main(string[] args)
   {
-    var schema = Schema.For(@"
-      type Pokemon {
-        id: String!
-        name: String!
-      }
-
-      type Query{
-        pokemon: Pokemon
-      }
-    ", _ => {
-      _.Types.Include<Query>();
-    });
+    var schema = new Schema
+    {
+      Query = new Query()
+    };
+    
  
     var json = await schema.ExecuteAsync(_ =>
     {
