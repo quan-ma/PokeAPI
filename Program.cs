@@ -18,7 +18,7 @@ namespace PokeAPI
  
     var json = await schema.ExecuteAsync(_ =>
     {
-      _.Query = "{ pokemon {id name} }";
+      _.Query = "{ pokemon {id name type} }";
     });
  
     Console.WriteLine(json);

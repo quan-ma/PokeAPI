@@ -8,6 +8,7 @@ namespace PokeAPI
         {
             Field(x => x.Id).Description("The Id of the Pokemon");
             Field(x => x.Name).Description("The Name of the Pokemon");
+            Field(x => x.Type).Description("Element Type");
         }
     }
 }

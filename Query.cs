@@ -13,7 +13,8 @@ namespace PokeAPI
                 resolve: context => new Pokemon
                 {
                     Id = "1",
-                    Name = "Pikachu"
+                    Name = "Pikachu",
+                    Type = "Electric"
                 }
             );
         }
